@@ -8,7 +8,6 @@ namespace primesC
     {
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>();                            //gets the numbers
             List<int> primes = new List<int>();                             //final list
             bool startit = true;
             bool isPrime = true;
@@ -23,24 +22,19 @@ namespace primesC
             if (num <= 1)                                                   //if not possible
             {
                 Console.WriteLine("There is no prime smaller or even to {0}", num);
-                Console.WriteLine("The input must be greater than 1!");                
+                Console.WriteLine("The number must greater than 1!");
                 startit = false;
             }
 
             if (startit == true)
             {
-                for (int i = 2; i <= num; i++)                              //creates the "number" List
-                {
-                    numbers.Add(i);
-                }
-                
-                for (int i = 0; i < numbers.Count; i++)                     //takes every number to compare with the primes to see if he is or sint prime
+                for (int i = 2; i <= num; i++)                     //takes every number to compare with the primes to see if he is or sint prime
                 {                                                           //if he is prime then he is added to "primes"
                     //Console.WriteLine("number: {0}", numbers[i]);
 
                     for (int j = 0; j < primes.Count; j++)                  //taking numbers from primes
                     {
-                        if (numbers[i] % primes[j] == 0)
+                        if (i % primes[j] == 0)
                         {
                             isPrime = false;
                             break;
@@ -49,7 +43,7 @@ namespace primesC
 
                     if (isPrime == true)                                    //number is prime and is added to "primes"
                     {
-                        primes.Add(numbers[i]);
+                        primes.Add(i);
 
                         //Console.WriteLine("number {0} is prime!", numbers[i]);
                     }
@@ -67,11 +61,11 @@ namespace primesC
             }
 
             Console.WriteLine();
-            Console.WriteLine("There are {0} primes", primes.Count);
+            Console.WriteLine("There are {0} primes that are smaller or even to {1}", primes.Count, num);
             Console.WriteLine("Times are:");
             Console.WriteLine("{0} - started", startTime);
             Console.WriteLine("{0} - ended", endTime);
-            
+
             Console.ReadKey();
         }
     }
