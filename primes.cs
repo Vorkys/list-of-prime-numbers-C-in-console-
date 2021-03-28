@@ -32,9 +32,9 @@ namespace primesC
                 {                                                           //if he is prime then he is added to "primes"
                     //Console.WriteLine("number: {0}", numbers[i]);
 
-                    for (int j = 0; j < primes.Count; j++)                  //taking numbers from primes
+                    foreach (int j in primes)                  //taking numbers from primes
                     {
-                        if (i % primes[j] == 0)
+                        if (i % j == 0)
                         {
                             isPrime = false;
                             break;
