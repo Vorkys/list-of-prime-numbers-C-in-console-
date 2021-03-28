@@ -55,12 +55,8 @@ namespace primesC
 
             Console.WriteLine("List of primes that are smaller or even to {0}: ", num);
 
-            foreach (int item in primes)                                    //prints list of primes
-            {
-                Console.Write("{0} ", item);
-            }
-
-            Console.WriteLine();
+            Console.WriteLine(String.Join(" ", primes.ToArray()));          //print the list of primes
+            
             Console.WriteLine("There are {0} primes that are smaller or even to {1}", primes.Count, num);
             Console.WriteLine("Times are:");
             Console.WriteLine("{0} - started", startTime);
