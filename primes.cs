@@ -12,8 +12,6 @@ namespace primesC
             bool startit = true;
             bool isPrime = true;
 
-            //int test = 0;
-
             Console.Write("Get primes smaller & equal to: ");
             int num = Convert.ToInt32(Console.ReadLine());
 
@@ -22,17 +20,17 @@ namespace primesC
             if (num <= 1)                                                   //if not possible
             {
                 Console.WriteLine("There is no prime smaller or even to {0}", num);
-                Console.WriteLine("The number must greater than 1!");
+                Console.WriteLine("The number must be greater than 1!");
                 startit = false;
             }
 
             if (startit == true)
             {
-                for (int i = 2; i <= num; i++)                     //takes every number to compare with the primes to see if he is or sint prime
+                for (int i = 2; i <= num; i++)                              //takes every number to compare with the primes to see if he is or sint prime
                 {                                                           //if he is prime then he is added to "primes"
                     //Console.WriteLine("number: {0}", numbers[i]);
 
-                    foreach (int j in primes)                  //taking numbers from primes
+                    foreach (int j in primes)                               //taking numbers from primes
                     {
                         if (i % j == 0)
                         {
