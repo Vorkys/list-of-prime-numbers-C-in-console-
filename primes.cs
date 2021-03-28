@@ -20,9 +20,10 @@ namespace primesC
 
             string startTime = DateTime.Now.ToString("hh:mm:ss:ffff");      //gets starting time
 
-            if (num == 1)                                                   //if not possible
+            if (num <= 1)                                                   //if not possible
             {
-                Console.WriteLine("There is no prime smaller or equal to 1");
+                Console.WriteLine("There is no prime smaller or even to {0}", num);
+                Console.WriteLine("The input must be greater than 1!");                
                 startit = false;
             }
 
@@ -32,34 +33,7 @@ namespace primesC
                 {
                     numbers.Add(i);
                 }
-                #region tests
-                ////////////////////////
-
-                //foreach (int _number in numbers)                //should go through the fist and second list to get the primes
-                //{
-                //    Console.WriteLine("first foreach! {0}", test);
-                //    test++;
-
-                //    foreach (int _prime in primes)
-                //    {
-                //        Console.WriteLine("second foreach!");
-                //        Console.WriteLine("comparing {0} & {1}", _number, _prime);
-
-                //        if (_number % _prime == 0)
-                //        {
-                //            break;
-                //        }
-                //        else
-                //        {
-                //            primes.Add(_number);
-                //        }
-                //    }
-                //    Console.WriteLine("end");
-                //}
-
-                //////////////////////////
-                #endregion
-
+                
                 for (int i = 0; i < numbers.Count; i++)                     //takes every number to compare with the primes to see if he is or sint prime
                 {                                                           //if he is prime then he is added to "primes"
                     //Console.WriteLine("number: {0}", numbers[i]);
@@ -85,7 +59,7 @@ namespace primesC
 
             string endTime = DateTime.Now.ToString("hh:mm:ss:ffff");        //takes ending time
 
-            Console.WriteLine("List of primes: ");
+            Console.WriteLine("List of primes that are smaller or even to {0}: ", num);
 
             foreach (int item in primes)                                    //prints list of primes
             {
